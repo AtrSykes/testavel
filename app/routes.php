@@ -17,9 +17,18 @@ Route::get('/x', "PagesController@show");
 
 Route::get('/db', function() {
 
-  $users = DB::table('users')->find(1);
+  //$users = DB::table('users')->find(1);
+  //$users = User::find(1);
 
-  dd($users);
+  // $user = new User;
+  // $user->username = 'karen';
+  // $user->password = Hash::make('password');
+  // $user->save();
+  //
+  // $user = User::find(3);
+  // $user->delete();
+
+  return User::all();
 
 });
 
