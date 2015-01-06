@@ -15,6 +15,14 @@ Route::get('/', "HomeController@showWelcome");
 
 Route::get('/x', "PagesController@show");
 
+Route::get('/db', function() {
+
+  $users = DB::table('users')->find(1);
+
+  dd($users);
+
+});
+
 /*
 Route::get('/', function()
 {
