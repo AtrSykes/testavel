@@ -11,6 +11,6 @@
     RewriteRule ^(.*)$ /public/index.php/$1 [L]
 
     # Handle Front Controller...
-
+    RewriteRule ^$ /public/index.php/ [L]
     
 </IfModule>
