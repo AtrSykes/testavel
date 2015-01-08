@@ -1,0 +1,373 @@
+/* Prion Project Stylesheet
+ * 
+ * Vanessa Chung
+ * vnchung@ualberta.ca
+ * January 15, 2009
+ *
+ */
+ 
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	color: #000000;
+	background-color: #d6e4dc; /* Mint green */
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 2.4em;
+	font-weight: normal;
+	color: #781d2e; /* Raspberry red */
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #9b4048; /* Lighter red */
+}
+
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.4em;
+	color: #9b4048; /* Lighter red */
+}
+
+h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.4em;
+	color: #6e7d73; /* Black */
+}
+
+h5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	font-weight: normal;
+	font-style: italic;
+	color: #718176; /* Grey */
+}
+
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	line-height: 1.5em;
+}
+
+ul li, ol li {
+font-size: 1.2em;
+	line-height: 1.5em;
+}
+
+a, a:link, a:visited, a:active,
+li a.active {
+	color: #479985; /* Bright teal */
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.container {
+	width: 950px;
+	margin: auto;
+}
+
+/* Header */
+#header {
+	background-color: #ffffff;
+	margin: 0;
+}
+
+	.logo {
+		float: left;
+		margin-left: 30px;
+	}
+	
+	.header_img {
+		float: right;
+		margin-right: 30px;
+	}
+	
+/* Main nav */
+#nav {
+	height: 34px;
+	background: url("../images/navbar_bkgd.gif") repeat-x;
+}
+
+#nav ul {
+	list-style: none;
+	margin: 0 0 0 30px;
+	padding: 0;
+}
+
+	#nav ul li {
+		list-style: none;
+		float: left;
+		padding: 0 15px;
+		margin: 8px 0;
+		border-left: 1px solid #ffffff;
+		color: #781d2e; /* Raspberry */
+	}
+	
+	#nav ul li:first-child {
+		padding-left: 0;
+		border-left: 0;
+	}
+	
+	#nav ul li a, #nav ul li a:link, #nav ul li a:visited {
+		color: #ffffff;
+		text-decoration: none;
+	}
+	
+	#nav ul li a:hover {
+		color: #9b4048; /* Lighter red */
+	}
+	
+	#nav ul li a.selected {
+		color: #781d2e; /* Raspberry */
+		font-weight: bold;
+	}
+	
+/* Content */
+#content .pageleft {
+	width: 950px;
+	margin: auto;
+	background: #ffffff url("../images/page_leftshadow.gif") repeat-y left;
+}
+
+#content .pageright {
+	background: url("../images/page_rightshadow.gif") repeat-y right;
+}
+
+
+.sidenav h4 {
+
+	/* no margin on headers in the main body so we get top alignment */
+	color: #6e7d73; /* Black */
+	margin: 0;
+	padding: 2px 2px;
+
+}
+
+
+#content h1,h2 {
+
+	/* no margin on headers in the main body so we get top alignment*/
+	margin-top: 0px;
+
+}
+
+	#content .box {
+		background: url("../images/topstripes.gif") no-repeat top;
+		margin: 0 4px;
+		padding: 26px;
+		position: relative; /*experimental*/
+	}
+	
+	#content .leftcol {
+		width: 220px;
+		float: left;
+		margin-right: 30px;
+/*		border: 1px solid red;*/
+	}
+	
+	#content .leftcol a:hover {
+	   color: #245042; /* Darker teal */
+	}
+
+	#content .maincol {
+		width: 640px;
+		float: left;
+	/*	border: 1px solid blue; */
+	}
+
+   #content .leftstub {
+		border-top: 2px solid #d6e4dc;
+	}
+
+	#content .leftstub img {
+		margin-top: 10px;
+	}
+
+/*
+	#content .sidenav p {
+		padding-bottom: 10px;
+	}
+*/
+	#content .sidenav {
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+	 	border-radius: 3px; 
+		margin: 0px 5px 10px 5px;	
+		background: #d6e4dc; 
+		padding: 10px;
+		clear: both;
+	}
+
+	.sidenav h4 {margin-bottom:5px}
+
+	.sidenav ul {
+		list-style: none;
+		margin: 0 0 0 10px;
+		padding: 0;
+	}
+
+	.sidenav ul li {
+		list-style: none;
+		float: left;
+		padding: 5px 0px;
+		clear: both;
+	}
+
+
+	.sup {
+		font-size:0.8em;
+		vertical-align:super;
+		line-height: 0.1em; /* this eliminates line spacing distortion from superscript */
+	}
+
+	.ne-date {
+		color: #718176;
+		font-style: italic;
+	}
+
+	.ne-title {
+		font-weight: bold;
+	}
+
+	#content .pe-box {
+	/*	background: gray; */
+		float: left;
+		margin: 5px 0px;
+		width: 640px;
+		clear: both;
+	}
+
+/* unnecessary since text flows around
+	#content .pe-text {
+		float: left;
+		width: 545px;
+		padding: 0px;
+	}
+*/
+
+	#content .pe-box img {
+		float: left;
+		margin-right: 15px;	
+		margin-bottom: 10px;	
+	}
+
+	#content .pe-box p {
+		margin-top: 0px;
+	}
+
+	#content .pe-name {
+		text-transform: uppercase;
+		font-weight: bold;	
+	} 
+
+	#content .left {
+		font-size:1.3em;
+		color: #9b4048; /* Lighter red */
+		width:100px;
+		float:left;
+	}
+
+	#content .reslink{
+		margin-right:20px;
+		font-size:1.2em;
+		width:160px;
+		float:left;
+	}
+
+	#content .resource {
+		font-size:1.2em;
+		width:210px;
+		float:left;
+		margin-right:20px;
+		margin-bottom: 20px;
+	}
+
+	#content .reslink a {
+		color: #9b4048; /* Lighter red */
+	}
+
+	.reslink h2, .resource h2 {
+		font-size: 1em;
+	}
+
+	#content .reslink a:hover {
+		color: #781d2e; /* Raspberry */
+		font-weight: bold;
+	}
+
+/* Footer */
+#footer {
+	width: 946px;
+	margin: auto;
+	padding-top: 20px;
+	background: url("../images/page_bottomshadow.gif") repeat-x;
+}
+
+	.collab {
+		float: left;
+		margin-right: 30px;
+	}
+	
+	.footer_right {
+		float: right;
+		margin-right: 30px;
+		text-align: right;
+	}
+
+	#footer img {
+		padding-bottom: 20px;
+	}
+
+
+div#links a#linknav,
+div#orgs a#orgnav
+{
+	   color: #245042; /* Darker teal */
+		font-weight: bold;
+}
+
+div#presentations a#presnav,
+div#publications a#pubnav,
+div#sops a#sopnav
+{
+	   color: #245042; /* Darker teal */
+		font-weight: bold;
+}
+
+body#none a{
+
+}
+
+body#home a#homenav,
+body#about a#aboutnav,
+body#people a#peoplenav,
+body#resources a#resnav,
+body#news a#newsnav {
+		color: #781d2e; /* Raspberry */
+		font-weight: bold;
+}
+
+/*experimental*/
+.postMeta {
+	font-size:.9em;
+	position:absolute;
+	top:8px;
+	left:3px;
+	width:150px;
+	text-align:right;
+}
+
