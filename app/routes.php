@@ -15,44 +15,16 @@ Route::get('/', "HomeController@showWelcome");
 
 Route::get('/x', "PagesController@show");
 
+// Route::get('/users', "UsersController@index");
+//
+// Route::get('users/{username}', 'UsersController@show');
+
 Route::get('/db', function() {
-
-  //$users = DB::table('users')->find(1);
-  //$users = User::find(1);
-
-  // $user = new User;
-  // $user->username = 'karen';
-  // $user->password = Hash::make('password');
-  // $user->save();
-  //
-  // $user = User::find(3);
-  // $user->delete();
 
   return User::all();
 
 });
 
-Route::get('users', function() {
-
-  $users = User::all();
-
-  return View::make('users.index', ['users' => $users]);
-
-});
-
-Route::get('users/{username}', function($username) {
-
-  $user = User::whereUsername($username)->first();
-
-  return View::make('users.show', ['user' => $user]);
-
-});
+Route::resource('users','UsersController');
 
 
-
-/*
-Route::get('/', function()
-{
-	return View::make('hello');
-});
- */
