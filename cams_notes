@@ -25,3 +25,9 @@ Laraval -> automatic resolution, does its best to create the necessary dependenc
 Now that we use an object, we can test, such as the behaviour of "isValid" with different inputs
 
 UsersController constructor takes a User object rather than creating it in the store method.
+
+Auth
+----
+
+Handled by Sessions controller
+

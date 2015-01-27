@@ -9,7 +9,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
-	public $timestamps = false; // or could set protected fillable here
+	public $timestamps = true; // or could set protected fillable here
 
 	protected $fillable = ['username', 'password'];
 
