@@ -1,0 +1,27 @@
+store operation, creates new user and then 
+Redirect::to
+
+Redirect::back (pass errors to view to display them)
+
+
+Validation
+----------
+
+Laravel has a validation class
+
+If there are other situations in which we want to validate
+a user, then we want to extract the rules out of the Users::store method.
+
+Options:
+  - extract rules to the model of the user
+  - createa a validation layer and create validation services
+
+- first attempt: in Laravel, users 'rules' will automatically be checked by the User class (in models)
+
+- second attempt: create an isValid method for a user, uses static methods (Laracasts Lesson 12)
+
+Laraval -> automatic resolution, does its best to create the necessary dependencies
+
+Now that we use an object, we can test, such as the behaviour of "isValid" with different inputs
+
+UsersController constructor takes a User object rather than creating it in the store method.

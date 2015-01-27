@@ -2,6 +2,14 @@
 
 class UsersController extends \BaseController {
 
+	protected $user;
+
+	public function __construct(User $user) {
+
+		$this->user = $user;
+		
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -10,7 +18,7 @@ class UsersController extends \BaseController {
 	public function index()
 	{
 		
-    $users = User::all();
+    $users = $this->user->all();
 
     return View::make('users.index', ['users' => $users]);
 	}
@@ -36,15 +44,23 @@ class UsersController extends \BaseController {
 	public function store()
 	{
 
-    $user = new User;
-    
+		// $input = Input::all();
+		// $this->user->create($input); // require mass assignability
+
+		$this->user->fill(Input::all());
+
+		if ( !$this->user->isValid())
+		{
+			return Redirect::back()->withInput()->withErrors($this->user->errors);
+		}
+
+		$user = $this->user;
+
     $user->username = Input::get('username');
     $user->password = Hash::make(Input::get('password'));
     $user->save();
 
-    
-
-    return Redirect::to('/users');
+    return Redirect::route('users.index');
   
 	}
 
@@ -57,10 +73,9 @@ class UsersController extends \BaseController {
 	 */
 	public function show($username)
 	{
-	$user = User::whereUsername($username)->first();
+		$user = $this->user->whereUsername($username)->first();
 
-  return View::make('users.show', ['user' => $user]);
-
+		return View::make('users.show', ['user' => $user]);
 	}
 
 
@@ -73,6 +88,8 @@ class UsersController extends \BaseController {
 	public function edit($id)
 	{
 		//
+			
+		return View::make('users.edit', ['user' => $user]);
 	}
 
 
