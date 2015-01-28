@@ -59,6 +59,7 @@ class UsersController extends \BaseController {
 
     $user->username = Input::get('username');
     $user->password = Hash::make(Input::get('password'));
+    $user->colour = Input::get('colour');
     $user->save();
 
     return Redirect::route('users.index');
@@ -74,9 +75,16 @@ class UsersController extends \BaseController {
 	 */
 	public function show($username)
 	{
-		$user = $this->user->whereUsername($username)->first();
+		if (Auth::user()->username == $username) {
 
-		return View::make('users.show', ['user' => $user]);
+			$user = $this->user->whereUsername($username)->first();
+
+			return View::make('users.show', ['user' => $user]);
+		} else {
+
+			return "Oops";
+		}
+		
 	}
 
 
@@ -86,11 +94,17 @@ class UsersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($username)
 	{
-		//
+		if (Auth::user()->username == $username) {
+
+			$user = $this->user->whereUsername($username)->first();
+
+			return View::make('users.edit', ['user' => $user]);
+		} else {
+			return "Oops";
+		}
 			
-		return View::make('users.edit', ['user' => $user]);
 	}
 
 

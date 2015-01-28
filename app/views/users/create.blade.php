@@ -18,7 +18,13 @@
 				{{ $errors->first('password') }}
         </div>
 
-        <div>{{Form::submit('Do it') }} <div>
+        <div>
+
+        {{ Form::label('colour', 'Favourite Colour:') }}
+        {{ Form::input('colour', 'colour') }}
+        <div>
+				
+				<div>{{Form::submit('Register') }} <div>
 
     {{ Form::close() }}
 @stop
