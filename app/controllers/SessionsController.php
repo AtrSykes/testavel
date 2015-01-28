@@ -42,7 +42,7 @@ class SessionsController extends \BaseController {
 	{
 		
 		if (Auth::attempt(Input::only('username','password'))){
-			return Auth::user();
+			return Redirect::to('users/'.Auth::user()->username);
 		}
 
 		return Redirect::back()->withInput();
