@@ -114,9 +114,13 @@ class UsersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($username)
 	{
-		//
+		$user = $this->user->whereUsername($username)->first();
+		$user->colour = Input::get('colour');
+		$user->save();
+
+		return View::make('users.show', ['user' => $user]);
 	}
 
 
