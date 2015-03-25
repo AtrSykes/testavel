@@ -24,7 +24,11 @@ class UsersController extends \BaseController {
     return View::make('users.index', ['users' => $users]);
 	}
 
-
+	public function isAdmin()
+	{
+		if ($this->user->role == 2) return true;
+		return false;
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
